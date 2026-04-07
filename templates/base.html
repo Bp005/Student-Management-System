@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System</title>
+    <style>
+        body { font-family: sans-serif; display: flex; margin: 0; }
+        .sidebar { width: 200px; background: #2c3e50; color: white; height: 100vh; padding: 20px; }
+        .main { flex-grow: 1; padding: 20px; background: #f4f4f4; }
+        .card-container { display: flex; gap: 20px; margin-bottom: 20px; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); flex: 1; }
+        table { width: 100%; background: white; border-collapse: collapse; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+    <h2>SMS Admin</h2>
+    <ul class="nav-links">
+        <!-- <li><a href="{% url 'student_dash' %}">👨‍🎓 Student Portal</a></li> -->
+        <!-- <li><a href="{% url 'teacher_dash' %}">👨‍🏫 Teacher Portal</a></li>
+        <li><a href="{% url 'course_list' %}">📚 Courses</a></li> -->
+        <hr>
+        <li><a href="/admin/">⚙️ Admin Panel</a></li>
+    </ul>
+</div>
+    <div class="main">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
