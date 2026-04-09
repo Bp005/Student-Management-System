@@ -22,6 +22,8 @@ from rest_framework.routers import DefaultRouter
 from teacher.views import TeacherViewSet
 from subject.views import SubjectViewSet
 from course.views import CourseViewSet
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+
 # Create a router and register our viewset
 
 router = DefaultRouter()
@@ -34,6 +36,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # This handles /students/, /students/1/, etc.
     path('api/',include(router.urls)),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
 # Django does:
 # Checks ROOT_URLCONF

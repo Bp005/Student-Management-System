@@ -10,6 +10,8 @@ class Student(models.Model):
     date_of_birth=models.DateField()
     age=models.IntegerField(null=True)
 
+    is_deleted=models.BooleanField(default=False)
+
     teacher=models.ForeignKey(Teacher, on_delete=models.CASCADE, related_name="student")
     course=models.ForeignKey(Course, on_delete=models.CASCADE, related_name="student")
     
